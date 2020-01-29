@@ -6,25 +6,23 @@
     
 
     
-    <title>python3 | Hexo</title>
+    <title>python进阶 Generators | Hexo</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="keywords" content="" />
     
-    <meta name="description" content="代码3-1 使用describe()方法即可查看数据的基本情况1234import pandas as pdcatering_sale &#x3D; &#39;..&#x2F;data&#x2F;catering_sale.xls&#39;  # 餐饮数据data &#x3D; pd.read_excel(catering_sale, index_col &#x3D; u&#39;日期&#39;)  # 读取数据，指定“日期”列为索引列print(data.describe()">
+    <meta name="description" content="生成器（Generators）首先我们要理解迭代器(iterators)。根据维基百科，迭代器是一个让程序员可以遍历一个容器（特别是列表）的对象。然而，一个迭代器在遍历并读取一个容器的数据元素时，并不会执行一个迭代。你可能有点晕了，那我们来个慢动作。换句话说这里有三个部分：  可迭代对象(Iterable) 迭代器(Iterator) 迭代(Iteration)  上面这些部分互相联系。我们会先各">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python3">
-<meta property="og:url" content="http://yoursite.com/2020/01/21/python3/index.html">
+<meta property="og:title" content="python进阶 Generators">
+<meta property="og:url" content="http://yoursite.com/2020/01/28/python%E8%BF%9B%E9%98%B6-Generators/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="代码3-1 使用describe()方法即可查看数据的基本情况1234import pandas as pdcatering_sale &#x3D; &#39;..&#x2F;data&#x2F;catering_sale.xls&#39;  # 餐饮数据data &#x3D; pd.read_excel(catering_sale, index_col &#x3D; u&#39;日期&#39;)  # 读取数据，指定“日期”列为索引列print(data.describe()">
+<meta property="og:description" content="生成器（Generators）首先我们要理解迭代器(iterators)。根据维基百科，迭代器是一个让程序员可以遍历一个容器（特别是列表）的对象。然而，一个迭代器在遍历并读取一个容器的数据元素时，并不会执行一个迭代。你可能有点晕了，那我们来个慢动作。换句话说这里有三个部分：  可迭代对象(Iterable) 迭代器(Iterator) 迭代(Iteration)  上面这些部分互相联系。我们会先各">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/006G4b6cly1gb48ahvtckj30px0hmmy0.jpg">
-<meta property="article:published_time" content="2020-01-21T07:26:00.000Z">
-<meta property="article:modified_time" content="2020-01-25T08:33:28.692Z">
+<meta property="article:published_time" content="2020-01-28T13:26:53.222Z">
+<meta property="article:modified_time" content="2020-01-29T01:17:42.406Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006G4b6cly1gb48ahvtckj30px0hmmy0.jpg">
     
 
     
@@ -149,19 +147,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <a class="page-title-link" href="/categories/python%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">python进阶教程</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-python3" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-python进阶-Generators" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        python3
+        python进阶 Generators
         </h1>
     
 
@@ -172,8 +170,8 @@
                 
     <div class="article-date">
       <i class="fa fa-calendar"></i>
-      <a href="/2020/01/21/python3/" class="article-date">
-         <time datetime="2020-01-21T07:26:00.000Z" itemprop="datePublished">2020-01-21</time>
+      <a href="/2020/01/28/python%E8%BF%9B%E9%98%B6-Generators/" class="article-date">
+         <time datetime="2020-01-28T13:26:53.222Z" itemprop="datePublished">2020-01-28</time>
       </a>
     </div>
 
@@ -189,20 +187,39 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="代码3-1-使用describe-方法即可查看数据的基本情况"><a href="#代码3-1-使用describe-方法即可查看数据的基本情况" class="headerlink" title="代码3-1 使用describe()方法即可查看数据的基本情况"></a>代码3-1 使用describe()方法即可查看数据的基本情况</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">catering_sale = <span class="string">'../data/catering_sale.xls'</span>  <span class="comment"># 餐饮数据</span></span><br><span class="line">data = pd.read_excel(catering_sale, index_col = <span class="string">u'日期'</span>)  <span class="comment"># 读取数据，指定“日期”列为索引列</span></span><br><span class="line">print(data.describe())</span><br></pre></td></tr></table></figure>
-<p>catering_sale.xls样式图片:<br><img src="http://ww1.sinaimg.cn/large/006G4b6cly1gb48ahvtckj30px0hmmy0.jpg" alt="123.PNG"></p>
-<h1 id="代码3-3-捞起生鱼片的季度销售情况"><a href="#代码3-3-捞起生鱼片的季度销售情况" class="headerlink" title="代码3-3 捞起生鱼片的季度销售情况"></a>代码3-3 捞起生鱼片的季度销售情况</h1><h2 id="频率分布直方图"><a href="#频率分布直方图" class="headerlink" title="频率分布直方图"></a>频率分布直方图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 代码3-3 捞起生鱼片的季度销售情况</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">catering_sale = <span class="string">'../data/catering_fish_congee.xls'</span>  <span class="comment"># 餐饮数据</span></span><br><span class="line">data = pd.read_excel(catering_sale,names=[<span class="string">'d'</span>,<span class="string">'sale'</span>])  </span><br><span class="line"></span><br><span class="line">bins = [<span class="number">0</span>,<span class="number">500</span>,<span class="number">1000</span>,<span class="number">1500</span>,<span class="number">2000</span>,<span class="number">2500</span>,<span class="number">3000</span>,<span class="number">3500</span>,<span class="number">4000</span>]</span><br><span class="line">labels = [<span class="string">'[0,500)'</span>,<span class="string">'[500,1000)'</span>,<span class="string">'[1000,1500)'</span>,<span class="string">'[1500,2000)'</span>,</span><br><span class="line">       <span class="string">'[2000,2500)'</span>,<span class="string">'[2500,3000)'</span>,<span class="string">'[3000,3500)'</span>,<span class="string">'[3500,4000)'</span>] </span><br><span class="line"></span><br><span class="line">data[<span class="string">'sale分层'</span>] = pd.cut(data.sale, bins, labels=labels)</span><br><span class="line">aggResult = data.groupby(by=[<span class="string">'sale分层'</span>])[<span class="string">'sale'</span>].agg(sale=np.size)</span><br><span class="line"></span><br><span class="line">pAggResult = round(aggResult/aggResult.sum(), <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">6</span>))  <span class="comment"># 设置图框大小尺寸</span></span><br><span class="line">pAggResult[<span class="string">'sale'</span>].plot(kind=<span class="string">'bar'</span>,width=<span class="number">0.8</span>,fontsize=<span class="number">10</span>)  <span class="comment"># 绘制频率直方图</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'SimHei'</span>]  <span class="comment"># 用来正常显示中文标签</span></span><br><span class="line">plt.title(<span class="string">'季度销售额频率分布直方图'</span>,fontsize=<span class="number">20</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p>catering_fish_congee.xls样式图片:<br><img src="http://ww1.sinaimg.cn/large/006G4b6cly1gb4cpnu6b2j30wq0je0u1.jpg" alt="1234.PNG"></p>
-<h1 id="代码3-4-不同菜品在某段时间的销售量的分布情况"><a href="#代码3-4-不同菜品在某段时间的销售量的分布情况" class="headerlink" title="代码3-4 不同菜品在某段时间的销售量的分布情况"></a>代码3-4 不同菜品在某段时间的销售量的分布情况</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">catering_dish_profit = <span class="string">'../data/catering_dish_profit.xls'</span>  <span class="comment"># 餐饮数据</span></span><br><span class="line">data = pd.read_excel(catering_dish_profit)</span><br></pre></td></tr></table></figure>
-<p>catering_dish_profit.xls样式图片:<br><img src="http://ww1.sinaimg.cn/large/006G4b6cly1gb8w4ax7j6j30pg0i0act.jpg" alt="123.PNG"></p>
-<h2 id="绘制饼图"><a href="#绘制饼图" class="headerlink" title="绘制饼图"></a>绘制饼图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = data[<span class="string">'盈利'</span>]</span><br><span class="line">labels = data[<span class="string">'菜品名'</span>]</span><br><span class="line">plt.figure(figsize = (<span class="number">8</span>, <span class="number">6</span>))  <span class="comment"># 设置画布大小</span></span><br><span class="line">plt.pie(x,labels=labels)  <span class="comment"># 绘制饼图</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = <span class="string">'SimHei'</span></span><br><span class="line">plt.title(<span class="string">'菜品销售量分布（饼图）'</span>)  <span class="comment"># 设置标题</span></span><br><span class="line">plt.axis(<span class="string">'equal'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<h2 id="绘制条形图"><a href="#绘制条形图" class="headerlink" title="绘制条形图"></a>绘制条形图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">x = data[<span class="string">'菜品名'</span>]</span><br><span class="line">y = data[<span class="string">'盈利'</span>]</span><br><span class="line">plt.figure(figsize = (<span class="number">8</span>, <span class="number">4</span>))  <span class="comment"># 设置画布大小</span></span><br><span class="line">plt.bar(x,y)</span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = <span class="string">'SimHei'</span></span><br><span class="line">plt.xlabel(<span class="string">'菜品'</span>)  <span class="comment"># 设置x轴标题</span></span><br><span class="line">plt.ylabel(<span class="string">'销量'</span>)  <span class="comment"># 设置y轴标题</span></span><br><span class="line">plt.title(<span class="string">'菜品销售量分布（条形图）'</span>)  <span class="comment"># 设置标题</span></span><br><span class="line">plt.show()  <span class="comment"># 展示图片</span></span><br></pre></td></tr></table></figure>
+            <h1 id="生成器（Generators）"><a href="#生成器（Generators）" class="headerlink" title="生成器（Generators）"></a>生成器（Generators）</h1><p>首先我们要理解迭代器(iterators)。根据维基百科，迭代器是一个让程序员可以遍历一个容器（特别是列表）的对象。然而，一个迭代器在遍历并读取一个容器的数据元素时，并不会执行一个迭代。你可能有点晕了，那我们来个慢动作。换句话说这里有三个部分：</p>
+<ul>
+<li>可迭代对象(Iterable)</li>
+<li>迭代器(Iterator)</li>
+<li>迭代(Iteration)</li>
+</ul>
+<p>上面这些部分互相联系。我们会先各个击破来讨论他们，然后再讨论生成器(generators).</p>
+<h1 id="可迭代对象-Iterable"><a href="#可迭代对象-Iterable" class="headerlink" title="可迭代对象(Iterable)"></a>可迭代对象(Iterable)</h1><p>Python中任意的对象，只要它定义了可以返回一个迭代器的<code>__iter__</code>方法，或者定义了可以支持下标索引的<code>__getitem__</code>方法(这些双下划线方法会在其他章节中全面解释)，那么它就是一个可迭代对象。简单说，可迭代对象就是能提供迭代器的任意对象。那迭代器又是什么呢？</p>
+<h1 id="迭代器-Iterator"><a href="#迭代器-Iterator" class="headerlink" title="迭代器(Iterator)"></a>迭代器(Iterator)</h1><p>任意对象，只要定义了<code>next</code>(Python2) 或者<code>__next__</code>方法，它就是一个迭代器。就这么简单。现在我们来理解迭代(iteration)</p>
+<h1 id="迭代-Iteration"><a href="#迭代-Iteration" class="headerlink" title="迭代(Iteration)"></a>迭代(Iteration)</h1><p>用简单的话讲，它就是从某个地方（比如一个列表）取出一个元素的过程。当我们使用一个循环来遍历某个东西时，这个过程本身就叫迭代。现在既然我们有了这些术语的基本理解，那我们开始理解生成器吧。</p>
+<h1 id="生成器-Generators"><a href="#生成器-Generators" class="headerlink" title="生成器(Generators)"></a>生成器(Generators)</h1><p>生成器也是一种迭代器，但是你只能对其迭代一次。这是因为它们并没有把所有的值存在内存中，而是在运行时生成值。你通过遍历来使用它们，要么用一个“for”循环，要么将它们传递给任意可以进行迭代的函数和结构。大多数时候生成器是以函数来实现的。然而，它们并不返回一个值，而是<code>yield</code>(暂且译作“生出”)一个值。这里有个生成器函数的简单例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generator_function</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        <span class="keyword">yield</span> i</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> generator_function():</span><br><span class="line">    print(item)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Output: 0</span></span><br><span class="line"><span class="comment"># 1</span></span><br><span class="line"><span class="comment"># 2</span></span><br><span class="line"><span class="comment"># 3</span></span><br><span class="line"><span class="comment"># 4</span></span><br><span class="line"><span class="comment"># 5</span></span><br><span class="line"><span class="comment"># 6</span></span><br><span class="line"><span class="comment"># 7</span></span><br><span class="line"><span class="comment"># 8</span></span><br><span class="line"><span class="comment"># 9</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="代码3-5-不同部门在各月份的销售对比情况"><a href="#代码3-5-不同部门在各月份的销售对比情况" class="headerlink" title="代码3-5 不同部门在各月份的销售对比情况"></a>代码3-5 不同部门在各月份的销售对比情况</h1><p>##部门之间销售金额比较</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">data=pd.read_excel(<span class="string">"../data/dish_sale.xls"</span>)</span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>, <span class="number">4</span>))</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'A部门'</span>], color=<span class="string">'green'</span>, label=<span class="string">'A部门'</span>,marker=<span class="string">'o'</span>)</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'B部门'</span>], color=<span class="string">'red'</span>, label=<span class="string">'B部门'</span>,marker=<span class="string">'s'</span>)</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'C部门'</span>],  color=<span class="string">'skyblue'</span>, label=<span class="string">'C部门'</span>,marker=<span class="string">'x'</span>)</span><br><span class="line">plt.legend() <span class="comment"># 显示图例</span></span><br><span class="line">plt.ylabel(<span class="string">'销售额（万元）'</span>)</span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = <span class="string">'SimHei'</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p>dish_sale.xls样式图片:<br><img src="http://ww1.sinaimg.cn/large/006G4b6cly1gb8w4sa7kuj30r00iwdh0.jpg" alt="456.PNG"></p>
-<h2 id="B部门各年份之间销售金额的比较"><a href="#B部门各年份之间销售金额的比较" class="headerlink" title="B部门各年份之间销售金额的比较"></a>B部门各年份之间销售金额的比较</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">data=pd.read_excel(<span class="string">"../data/dish_sale_b.xls"</span>)</span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>, <span class="number">4</span>))</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'2012年'</span>], color=<span class="string">'green'</span>, label=<span class="string">'2012年'</span>,marker=<span class="string">'o'</span>)</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'2013年'</span>], color=<span class="string">'red'</span>, label=<span class="string">'2013年'</span>,marker=<span class="string">'s'</span>)</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'2014年'</span>],  color=<span class="string">'skyblue'</span>, label=<span class="string">'2014年'</span>,marker=<span class="string">'x'</span>)</span><br><span class="line">plt.legend() <span class="comment"># 显示图例</span></span><br><span class="line">plt.ylabel(<span class="string">'销售额（万元）'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p>dish_sale_b.xls样式图片:<br><img src="http://ww1.sinaimg.cn/large/006G4b6cly1gb8w54ngi8j30q70jngmt.jpg" alt="789.PNG"></p>
+<p>这个案例并不是非常实用。生成器最佳应用场景是：你不想同一时间将所有计算出来的大量结果集分配到内存当中，特别是结果集里还包含循环。</p>
+<blockquote>
+<p>译者注：这样做会消耗大量资源 </p>
+</blockquote>
+<p>许多Python 2里的标准库函数都会返回列表，而Python 3都修改成了返回生成器，因为生成器占用更少的资源。  </p>
+<p>下面是一个计算斐波那契数列的生成器：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># generator version</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibon</span><span class="params">(n)</span>:</span></span><br><span class="line">    a = b = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        <span class="keyword">yield</span> a</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">Now we can use it like this:</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> fibon(<span class="number">1000000</span>):</span><br><span class="line">    print(x)</span><br></pre></td></tr></table></figure>
+
+<p>用这种方式，我们可以不用担心它会使用大量资源。然而，之前如果我们这样来实现的话：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibon</span><span class="params">(n)</span>:</span></span><br><span class="line">    a = b = <span class="number">1</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        result.append(a)</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<p>这也许会在计算很大的输入参数时，用尽所有的资源。我们已经讨论过生成器使用一次迭代，但我们并没有测试过。在测试前你需要再知道一个Python内置函数：<code>next()</code>。它允许我们获取一个序列的下一个元素。那我们来验证下我们的理解：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generator_function</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">        <span class="keyword">yield</span> i</span><br><span class="line"></span><br><span class="line">gen = generator_function()</span><br><span class="line">print(next(gen))</span><br><span class="line"><span class="comment"># Output: 0</span></span><br><span class="line">print(next(gen))</span><br><span class="line"><span class="comment"># Output: 1</span></span><br><span class="line">print(next(gen))</span><br><span class="line"><span class="comment"># Output: 2</span></span><br><span class="line">print(next(gen))</span><br><span class="line"><span class="comment"># Output: Traceback (most recent call last):</span></span><br><span class="line"><span class="comment">#            File "&lt;stdin&gt;", line 1, in &lt;module&gt;</span></span><br><span class="line"><span class="comment">#         StopIteration</span></span><br></pre></td></tr></table></figure>
+
+<p>我们可以看到，在<code>yield</code>掉所有的值后，<code>next()</code>触发了一个<code>StopIteration</code>的异常。基本上这个异常告诉我们，所有的值都已经被<code>yield</code>完了。你也许会奇怪，为什么我们在使用<code>for</code>循环时没有这个异常呢？啊哈，答案很简单。<code>for</code>循环会自动捕捉到这个异常并停止调用<code>next()</code>。你知不知道Python中一些内置数据类型也支持迭代哦？我们这就去看看：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">my_string = <span class="string">"Yasoob"</span></span><br><span class="line">next(my_string)</span><br><span class="line"><span class="comment"># Output: Traceback (most recent call last):</span></span><br><span class="line"><span class="comment">#      File "&lt;stdin&gt;", line 1, in &lt;module&gt;</span></span><br><span class="line"><span class="comment">#    TypeError: str object is not an iterator</span></span><br></pre></td></tr></table></figure>
+
+<p>好吧，这不是我们预期的。这个异常说那个<code>str</code>对象不是一个迭代器。对，就是这样！它是一个可迭代对象，而不是一个迭代器。这意味着它支持迭代，但我们不能直接对其进行迭代操作。那我们怎样才能对它实施迭代呢？是时候学习下另一个内置函数，<code>iter</code>。它将根据一个可迭代对象返回一个迭代器对象。这里是我们如何使用它：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">my_string = <span class="string">"Yasoob"</span></span><br><span class="line">my_iter = iter(my_string)</span><br><span class="line">next(my_iter)</span><br><span class="line"><span class="comment"># Output: 'Y'</span></span><br></pre></td></tr></table></figure>
+<p>现在好多啦。我肯定你已经爱上了学习生成器。一定要记住，想要完全掌握这个概念，你只有使用它。确保你按照这个模式，并在生成器对你有意义的任何时候都使用它。你绝对不会失望的！</p>
 
         </div>
         <footer class="article-footer">
@@ -210,7 +227,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2020/01/21/python3/" data-id="ck5ymevrv0008lwvu60n00pqp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2020/01/28/python%E8%BF%9B%E9%98%B6-Generators/" data-id="ck5ymevrn0004lwvuhoctawfk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -280,16 +297,22 @@
             "@type": "Person",
             "name": "John Doe"
         },
-        "headline": "python3",
-        "image": "http://yoursite.comhttp://ww1.sinaimg.cn/large/006G4b6cly1gb48ahvtckj30px0hmmy0.jpg",
+        "headline": "python进阶 Generators",
+        "image": "http://yoursite.com",
         "keywords": "",
-        "genre": "",
-        "datePublished": "2020-01-21",
-        "dateCreated": "2020-01-21",
-        "dateModified": "2020-01-25",
-        "url": "http://yoursite.com/2020/01/21/python3/",
-        "description": "代码3-1 使用describe()方法即可查看数据的基本情况1234import pandas as pdcatering_sale = '../data/catering_sale.xls'  # 餐饮数据data = pd.read_excel(catering_sale, index_col = u'日期')  # 读取数据，指定“日期”列为索引列print(data.describe()",
-        "wordCount": 496
+        "genre": "python进阶教程",
+        "datePublished": "2020-01-28",
+        "dateCreated": "2020-01-28",
+        "dateModified": "2020-01-29",
+        "url": "http://yoursite.com/2020/01/28/python进阶-Generators/",
+        "description": "生成器（Generators）首先我们要理解迭代器(iterators)。根据维基百科，迭代器是一个让程序员可以遍历一个容器（特别是列表）的对象。然而，一个迭代器在遍历并读取一个容器的数据元素时，并不会执行一个迭代。你可能有点晕了，那我们来个慢动作。换句话说这里有三个部分：
+
+可迭代对象(Iterable)
+迭代器(Iterator)
+迭代(Iteration)
+
+上面这些部分互相联系。我们会先各",
+        "wordCount": 457
     }
 </script>
 
@@ -370,20 +393,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2020/01/28/2010-%E5%B9%B4%E5%85%A8%E5%9B%BD%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E5%85%A5%E5%AD%A6%E7%BB%9F%E4%B8%80%E8%80%83%E8%AF%95/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            2010 年全国硕士研究生入学统一考试(一、选择题) 
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2020/01/20/python%E5%B7%A5%E5%85%B7/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2020/01/28/python%E8%BF%9B%E9%98%B6-Debugging/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">python工具</p>
+        <p class="article-nav-title">python进阶 Debugging</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -599,7 +612,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://yoursite.com/2020/01/21/python3/';
+    var disqus_url = 'http://yoursite.com/2020/01/28/python%E8%BF%9B%E9%98%B6-Generators/';
     
     (function() {
     var dsq = document.createElement('script');

@@ -6,25 +6,23 @@
     
 
     
-    <title>python3 | Hexo</title>
+    <title>python进阶   args_kwargs | Hexo</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="keywords" content="" />
     
-    <meta name="description" content="代码3-1 使用describe()方法即可查看数据的基本情况1234import pandas as pdcatering_sale &#x3D; &#39;..&#x2F;data&#x2F;catering_sale.xls&#39;  # 餐饮数据data &#x3D; pd.read_excel(catering_sale, index_col &#x3D; u&#39;日期&#39;)  # 读取数据，指定“日期”列为索引列print(data.describe()">
+    <meta name="description" content="*args 和 **kwargs我观察到，大部分新的Python程序员都需要花上大量时间理解清楚 *args 和**kwargs这两个魔法变量。那么它们到底是什么?  首先让我告诉你, 其实并不是必须写成*args 和**kwargs。 只有变量前面的 *(星号)才是必须的. 你也可以写成*var 和**vars. 而写成*args 和**kwargs只是一个通俗的命名约定。 那就让我们先看一下*">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python3">
-<meta property="og:url" content="http://yoursite.com/2020/01/21/python3/index.html">
+<meta property="og:title" content="python进阶   args_kwargs">
+<meta property="og:url" content="http://yoursite.com/2020/01/28/python%E8%BF%9B%E9%98%B6-args_kwargs/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="代码3-1 使用describe()方法即可查看数据的基本情况1234import pandas as pdcatering_sale &#x3D; &#39;..&#x2F;data&#x2F;catering_sale.xls&#39;  # 餐饮数据data &#x3D; pd.read_excel(catering_sale, index_col &#x3D; u&#39;日期&#39;)  # 读取数据，指定“日期”列为索引列print(data.describe()">
+<meta property="og:description" content="*args 和 **kwargs我观察到，大部分新的Python程序员都需要花上大量时间理解清楚 *args 和**kwargs这两个魔法变量。那么它们到底是什么?  首先让我告诉你, 其实并不是必须写成*args 和**kwargs。 只有变量前面的 *(星号)才是必须的. 你也可以写成*var 和**vars. 而写成*args 和**kwargs只是一个通俗的命名约定。 那就让我们先看一下*">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/006G4b6cly1gb48ahvtckj30px0hmmy0.jpg">
-<meta property="article:published_time" content="2020-01-21T07:26:00.000Z">
-<meta property="article:modified_time" content="2020-01-25T08:33:28.692Z">
+<meta property="article:published_time" content="2020-01-28T13:05:00.000Z">
+<meta property="article:modified_time" content="2020-01-28T13:16:59.368Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006G4b6cly1gb48ahvtckj30px0hmmy0.jpg">
     
 
     
@@ -149,19 +147,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <a class="page-title-link" href="/categories/python%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">python进阶教程</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-python3" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-python进阶-args_kwargs" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        python3
+        python进阶   args_kwargs
         </h1>
     
 
@@ -172,8 +170,8 @@
                 
     <div class="article-date">
       <i class="fa fa-calendar"></i>
-      <a href="/2020/01/21/python3/" class="article-date">
-         <time datetime="2020-01-21T07:26:00.000Z" itemprop="datePublished">2020-01-21</time>
+      <a href="/2020/01/28/python%E8%BF%9B%E9%98%B6-args_kwargs/" class="article-date">
+         <time datetime="2020-01-28T13:05:00.000Z" itemprop="datePublished">2020-01-28</time>
       </a>
     </div>
 
@@ -189,20 +187,36 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="代码3-1-使用describe-方法即可查看数据的基本情况"><a href="#代码3-1-使用describe-方法即可查看数据的基本情况" class="headerlink" title="代码3-1 使用describe()方法即可查看数据的基本情况"></a>代码3-1 使用describe()方法即可查看数据的基本情况</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">catering_sale = <span class="string">'../data/catering_sale.xls'</span>  <span class="comment"># 餐饮数据</span></span><br><span class="line">data = pd.read_excel(catering_sale, index_col = <span class="string">u'日期'</span>)  <span class="comment"># 读取数据，指定“日期”列为索引列</span></span><br><span class="line">print(data.describe())</span><br></pre></td></tr></table></figure>
-<p>catering_sale.xls样式图片:<br><img src="http://ww1.sinaimg.cn/large/006G4b6cly1gb48ahvtckj30px0hmmy0.jpg" alt="123.PNG"></p>
-<h1 id="代码3-3-捞起生鱼片的季度销售情况"><a href="#代码3-3-捞起生鱼片的季度销售情况" class="headerlink" title="代码3-3 捞起生鱼片的季度销售情况"></a>代码3-3 捞起生鱼片的季度销售情况</h1><h2 id="频率分布直方图"><a href="#频率分布直方图" class="headerlink" title="频率分布直方图"></a>频率分布直方图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 代码3-3 捞起生鱼片的季度销售情况</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">catering_sale = <span class="string">'../data/catering_fish_congee.xls'</span>  <span class="comment"># 餐饮数据</span></span><br><span class="line">data = pd.read_excel(catering_sale,names=[<span class="string">'d'</span>,<span class="string">'sale'</span>])  </span><br><span class="line"></span><br><span class="line">bins = [<span class="number">0</span>,<span class="number">500</span>,<span class="number">1000</span>,<span class="number">1500</span>,<span class="number">2000</span>,<span class="number">2500</span>,<span class="number">3000</span>,<span class="number">3500</span>,<span class="number">4000</span>]</span><br><span class="line">labels = [<span class="string">'[0,500)'</span>,<span class="string">'[500,1000)'</span>,<span class="string">'[1000,1500)'</span>,<span class="string">'[1500,2000)'</span>,</span><br><span class="line">       <span class="string">'[2000,2500)'</span>,<span class="string">'[2500,3000)'</span>,<span class="string">'[3000,3500)'</span>,<span class="string">'[3500,4000)'</span>] </span><br><span class="line"></span><br><span class="line">data[<span class="string">'sale分层'</span>] = pd.cut(data.sale, bins, labels=labels)</span><br><span class="line">aggResult = data.groupby(by=[<span class="string">'sale分层'</span>])[<span class="string">'sale'</span>].agg(sale=np.size)</span><br><span class="line"></span><br><span class="line">pAggResult = round(aggResult/aggResult.sum(), <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">6</span>))  <span class="comment"># 设置图框大小尺寸</span></span><br><span class="line">pAggResult[<span class="string">'sale'</span>].plot(kind=<span class="string">'bar'</span>,width=<span class="number">0.8</span>,fontsize=<span class="number">10</span>)  <span class="comment"># 绘制频率直方图</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'SimHei'</span>]  <span class="comment"># 用来正常显示中文标签</span></span><br><span class="line">plt.title(<span class="string">'季度销售额频率分布直方图'</span>,fontsize=<span class="number">20</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p>catering_fish_congee.xls样式图片:<br><img src="http://ww1.sinaimg.cn/large/006G4b6cly1gb4cpnu6b2j30wq0je0u1.jpg" alt="1234.PNG"></p>
-<h1 id="代码3-4-不同菜品在某段时间的销售量的分布情况"><a href="#代码3-4-不同菜品在某段时间的销售量的分布情况" class="headerlink" title="代码3-4 不同菜品在某段时间的销售量的分布情况"></a>代码3-4 不同菜品在某段时间的销售量的分布情况</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">catering_dish_profit = <span class="string">'../data/catering_dish_profit.xls'</span>  <span class="comment"># 餐饮数据</span></span><br><span class="line">data = pd.read_excel(catering_dish_profit)</span><br></pre></td></tr></table></figure>
-<p>catering_dish_profit.xls样式图片:<br><img src="http://ww1.sinaimg.cn/large/006G4b6cly1gb8w4ax7j6j30pg0i0act.jpg" alt="123.PNG"></p>
-<h2 id="绘制饼图"><a href="#绘制饼图" class="headerlink" title="绘制饼图"></a>绘制饼图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = data[<span class="string">'盈利'</span>]</span><br><span class="line">labels = data[<span class="string">'菜品名'</span>]</span><br><span class="line">plt.figure(figsize = (<span class="number">8</span>, <span class="number">6</span>))  <span class="comment"># 设置画布大小</span></span><br><span class="line">plt.pie(x,labels=labels)  <span class="comment"># 绘制饼图</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = <span class="string">'SimHei'</span></span><br><span class="line">plt.title(<span class="string">'菜品销售量分布（饼图）'</span>)  <span class="comment"># 设置标题</span></span><br><span class="line">plt.axis(<span class="string">'equal'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<h2 id="绘制条形图"><a href="#绘制条形图" class="headerlink" title="绘制条形图"></a>绘制条形图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">x = data[<span class="string">'菜品名'</span>]</span><br><span class="line">y = data[<span class="string">'盈利'</span>]</span><br><span class="line">plt.figure(figsize = (<span class="number">8</span>, <span class="number">4</span>))  <span class="comment"># 设置画布大小</span></span><br><span class="line">plt.bar(x,y)</span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = <span class="string">'SimHei'</span></span><br><span class="line">plt.xlabel(<span class="string">'菜品'</span>)  <span class="comment"># 设置x轴标题</span></span><br><span class="line">plt.ylabel(<span class="string">'销量'</span>)  <span class="comment"># 设置y轴标题</span></span><br><span class="line">plt.title(<span class="string">'菜品销售量分布（条形图）'</span>)  <span class="comment"># 设置标题</span></span><br><span class="line">plt.show()  <span class="comment"># 展示图片</span></span><br></pre></td></tr></table></figure>
+            <h1 id="args-和-kwargs"><a href="#args-和-kwargs" class="headerlink" title="*args 和 **kwargs"></a><code>*args</code> 和 <code>**kwargs</code></h1><p>我观察到，大部分新的Python程序员都需要花上大量时间理解清楚 <code>*args</code> 和<code>**kwargs</code>这两个魔法变量。那么它们到底是什么? </p>
+<p>首先让我告诉你, 其实并不是必须写成<code>*args</code> 和<code>**kwargs</code>。 只有变量前面的 <code>*</code>(星号)才是必须的. 你也可以写成<code>*var</code> 和<code>**vars</code>. 而写成<code>*args</code> 和<code>**kwargs</code>只是一个通俗的命名约定。 那就让我们先看一下<code>*args</code>吧。</p>
+<h1 id="args-的用法"><a href="#args-的用法" class="headerlink" title="*args 的用法"></a>*args 的用法</h1><p>啊！<code>*args</code> 和 <code>**kwargs</code> 主要用于函数定义。 你可以将不定数量的参数传递给一个函数。<br>这里的不定的意思是：预先并不知道, 函数使用者会传递多少个参数给你, 所以在这个场景下使用这两个关键字。 <code>*args</code> 是用来发送一个非键值对的可变数量的参数列表给一个函数.<br>这里有个例子帮你理解这个概念:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_var_args</span><span class="params">(f_arg, *argv)</span>:</span></span><br><span class="line">    print(<span class="string">"first normal arg:"</span>, f_arg)</span><br><span class="line">    <span class="keyword">for</span> arg <span class="keyword">in</span> argv:</span><br><span class="line">        print(<span class="string">"another arg through *argv:"</span>, arg)</span><br><span class="line"></span><br><span class="line">test_var_args(<span class="string">'yasoob'</span>, <span class="string">'python'</span>, <span class="string">'eggs'</span>, <span class="string">'test'</span>)</span><br></pre></td></tr></table></figure>
 
-<h1 id="代码3-5-不同部门在各月份的销售对比情况"><a href="#代码3-5-不同部门在各月份的销售对比情况" class="headerlink" title="代码3-5 不同部门在各月份的销售对比情况"></a>代码3-5 不同部门在各月份的销售对比情况</h1><p>##部门之间销售金额比较</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">data=pd.read_excel(<span class="string">"../data/dish_sale.xls"</span>)</span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>, <span class="number">4</span>))</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'A部门'</span>], color=<span class="string">'green'</span>, label=<span class="string">'A部门'</span>,marker=<span class="string">'o'</span>)</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'B部门'</span>], color=<span class="string">'red'</span>, label=<span class="string">'B部门'</span>,marker=<span class="string">'s'</span>)</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'C部门'</span>],  color=<span class="string">'skyblue'</span>, label=<span class="string">'C部门'</span>,marker=<span class="string">'x'</span>)</span><br><span class="line">plt.legend() <span class="comment"># 显示图例</span></span><br><span class="line">plt.ylabel(<span class="string">'销售额（万元）'</span>)</span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = <span class="string">'SimHei'</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p>dish_sale.xls样式图片:<br><img src="http://ww1.sinaimg.cn/large/006G4b6cly1gb8w4sa7kuj30r00iwdh0.jpg" alt="456.PNG"></p>
-<h2 id="B部门各年份之间销售金额的比较"><a href="#B部门各年份之间销售金额的比较" class="headerlink" title="B部门各年份之间销售金额的比较"></a>B部门各年份之间销售金额的比较</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">data=pd.read_excel(<span class="string">"../data/dish_sale_b.xls"</span>)</span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>, <span class="number">4</span>))</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'2012年'</span>], color=<span class="string">'green'</span>, label=<span class="string">'2012年'</span>,marker=<span class="string">'o'</span>)</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'2013年'</span>], color=<span class="string">'red'</span>, label=<span class="string">'2013年'</span>,marker=<span class="string">'s'</span>)</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'2014年'</span>],  color=<span class="string">'skyblue'</span>, label=<span class="string">'2014年'</span>,marker=<span class="string">'x'</span>)</span><br><span class="line">plt.legend() <span class="comment"># 显示图例</span></span><br><span class="line">plt.ylabel(<span class="string">'销售额（万元）'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p>dish_sale_b.xls样式图片:<br><img src="http://ww1.sinaimg.cn/large/006G4b6cly1gb8w54ngi8j30q70jngmt.jpg" alt="789.PNG"></p>
+<p>这会产生如下输出:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">first normal arg: yasoob</span><br><span class="line">another arg through *argv: python</span><br><span class="line">another arg through *argv: eggs</span><br><span class="line">another arg through *argv: test</span><br></pre></td></tr></table></figure>
+
+<p>我希望这解决了你所有的困惑. 那接下来让我们谈谈 <code>**kwargs</code></p>
+<h1 id="kwargs-的用法"><a href="#kwargs-的用法" class="headerlink" title="**kwargs 的用法"></a>**kwargs 的用法</h1><p>啊！<code>**kwargs</code> 允许你将不定长度的<strong>键值对</strong>, 作为参数传递给一个函数。 如果你想要在一个函数里处理<strong>带名字的参数</strong>, 你应该使用<code>**kwargs</code>。 </p>
+<p>这里有个让你上手的例子:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_me</span><span class="params">(**kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> key, value <span class="keyword">in</span> kwargs.items():</span><br><span class="line">        print(<span class="string">"&#123;0&#125; == &#123;1&#125;"</span>.format(key, value))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>greet_me(name=<span class="string">"yasoob"</span>)</span><br><span class="line">name == yasoob</span><br></pre></td></tr></table></figure>
+
+<p>现在你可以看出我们怎样在一个函数里, 处理了一个<strong>键值对</strong>参数了。</p>
+<p>这就是<code>**kwargs</code>的基础, 而且你可以看出它有多么管用。 接下来让我们谈谈，你怎样使用<code>*args</code> 和 <code>**kwargs</code>来调用一个参数为列表或者字典的函数。</p>
+<h1 id="使用-args-和-kwargs-来调用函数"><a href="#使用-args-和-kwargs-来调用函数" class="headerlink" title="使用 *args 和 **kwargs 来调用函数"></a>使用 <code>*args</code> 和 <code>**kwargs</code> 来调用函数</h1><p>那现在我们将看到怎样使用<code>*args</code>和<code>**kwargs</code> 来调用一个函数。<br> 假设，你有这样一个小函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_args_kwargs</span><span class="params">(arg1, arg2, arg3)</span>:</span></span><br><span class="line">    print(<span class="string">"arg1:"</span>, arg1)</span><br><span class="line">    print(<span class="string">"arg2:"</span>, arg2)</span><br><span class="line">    print(<span class="string">"arg3:"</span>, arg3)</span><br></pre></td></tr></table></figure>
+
+<p>你可以使用<code>*args</code>或<code>**kwargs</code>来给这个小函数传递参数。<br>下面是怎样做：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首先使用 *args</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>args = (<span class="string">"two"</span>, <span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>test_args_kwargs(*args)</span><br><span class="line">arg1: two</span><br><span class="line">arg2: <span class="number">3</span></span><br><span class="line">arg3: <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 现在使用 **kwargs:</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>kwargs = &#123;<span class="string">"arg3"</span>: <span class="number">3</span>, <span class="string">"arg2"</span>: <span class="string">"two"</span>, <span class="string">"arg1"</span>: <span class="number">5</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>test_args_kwargs(**kwargs)</span><br><span class="line">arg1: <span class="number">5</span></span><br><span class="line">arg2: two</span><br><span class="line">arg3: <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="标准参数与-args、-kwargs在使用时的顺序"><a href="#标准参数与-args、-kwargs在使用时的顺序" class="headerlink" title="标准参数与*args、**kwargs在使用时的顺序"></a>标准参数与<code>*args、**kwargs</code>在使用时的顺序</h3><p>那么如果你想在函数里同时使用所有这三种参数， 顺序是这样的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">some_func(fargs, *args, **kwargs)</span><br></pre></td></tr></table></figure>
+
+<h1 id="什么时候使用它们？"><a href="#什么时候使用它们？" class="headerlink" title="什么时候使用它们？"></a>什么时候使用它们？</h1><p>这还真的要看你的需求而定。</p>
+<p>最常见的用例是在写函数装饰器的时候（会在另一章里讨论）。</p>
+<p>此外它也可以用来做猴子补丁(monkey patching)。猴子补丁的意思是在程序运行时(runtime)修改某些代码。 打个比方，你有一个类，里面有个叫<code>get_info</code>的函数会调用一个API并返回相应的数据。如果我们想测试它，可以把API调用替换成一些测试数据。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> someclass</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_info</span><span class="params">(self, *args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Test data"</span></span><br><span class="line"></span><br><span class="line">someclass.get_info = get_info</span><br></pre></td></tr></table></figure>
+
+<p>我敢肯定你也可以想象到一些其他的用例。</p>
 
         </div>
         <footer class="article-footer">
@@ -210,7 +224,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2020/01/21/python3/" data-id="ck5ymevrv0008lwvu60n00pqp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2020/01/28/python%E8%BF%9B%E9%98%B6-args_kwargs/" data-id="ck5ymevrt0007lwvu5ufkcc6j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -280,16 +294,17 @@
             "@type": "Person",
             "name": "John Doe"
         },
-        "headline": "python3",
-        "image": "http://yoursite.comhttp://ww1.sinaimg.cn/large/006G4b6cly1gb48ahvtckj30px0hmmy0.jpg",
+        "headline": "python进阶   args_kwargs",
+        "image": "http://yoursite.com",
         "keywords": "",
-        "genre": "",
-        "datePublished": "2020-01-21",
-        "dateCreated": "2020-01-21",
-        "dateModified": "2020-01-25",
-        "url": "http://yoursite.com/2020/01/21/python3/",
-        "description": "代码3-1 使用describe()方法即可查看数据的基本情况1234import pandas as pdcatering_sale = '../data/catering_sale.xls'  # 餐饮数据data = pd.read_excel(catering_sale, index_col = u'日期')  # 读取数据，指定“日期”列为索引列print(data.describe()",
-        "wordCount": 496
+        "genre": "python进阶教程",
+        "datePublished": "2020-01-28",
+        "dateCreated": "2020-01-28",
+        "dateModified": "2020-01-28",
+        "url": "http://yoursite.com/2020/01/28/python进阶-args_kwargs/",
+        "description": "*args 和 **kwargs我观察到，大部分新的Python程序员都需要花上大量时间理解清楚 *args 和**kwargs这两个魔法变量。那么它们到底是什么? 
+首先让我告诉你, 其实并不是必须写成*args 和**kwargs。 只有变量前面的 *(星号)才是必须的. 你也可以写成*var 和**vars. 而写成*args 和**kwargs只是一个通俗的命名约定。 那就让我们先看一下*",
+        "wordCount": 367
     }
 </script>
 
@@ -370,20 +385,20 @@
         
 <nav id="article-nav">
     
-        <a href="/2020/01/28/2010-%E5%B9%B4%E5%85%A8%E5%9B%BD%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E5%85%A5%E5%AD%A6%E7%BB%9F%E4%B8%80%E8%80%83%E8%AF%95/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2020/01/28/python%E8%BF%9B%E9%98%B6-Debugging/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            2010 年全国硕士研究生入学统一考试(一、选择题) 
+            python进阶 Debugging
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2020/01/20/python%E5%B7%A5%E5%85%B7/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2020/01/28/2010-%E5%B9%B4%E5%85%A8%E5%9B%BD%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E5%85%A5%E5%AD%A6%E7%BB%9F%E4%B8%80%E8%80%83%E8%AF%95/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">python工具</p>
+        <p class="article-nav-title">2010 年全国硕士研究生入学统一考试(一、选择题) </p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -599,7 +614,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://yoursite.com/2020/01/21/python3/';
+    var disqus_url = 'http://yoursite.com/2020/01/28/python%E8%BF%9B%E9%98%B6-args_kwargs/';
     
     (function() {
     var dsq = document.createElement('script');
