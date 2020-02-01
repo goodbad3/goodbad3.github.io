@@ -6,7 +6,7 @@
     
 
     
-    <title>python3 | Hexo</title>
+    <title>python第3章 | Hexo</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -14,14 +14,14 @@
     
     <meta name="description" content="代码3-1 使用describe()方法即可查看数据的基本情况1234import pandas as pdcatering_sale &#x3D; &#39;..&#x2F;data&#x2F;catering_sale.xls&#39;  # 餐饮数据data &#x3D; pd.read_excel(catering_sale, index_col &#x3D; u&#39;日期&#39;)  # 读取数据，指定“日期”列为索引列print(data.describe()">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python3">
+<meta property="og:title" content="python第3章">
 <meta property="og:url" content="http://yoursite.com/2020/01/21/python3/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="代码3-1 使用describe()方法即可查看数据的基本情况1234import pandas as pdcatering_sale &#x3D; &#39;..&#x2F;data&#x2F;catering_sale.xls&#39;  # 餐饮数据data &#x3D; pd.read_excel(catering_sale, index_col &#x3D; u&#39;日期&#39;)  # 读取数据，指定“日期”列为索引列print(data.describe()">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006G4b6cly1gb48ahvtckj30px0hmmy0.jpg">
 <meta property="article:published_time" content="2020-01-21T07:26:00.000Z">
-<meta property="article:modified_time" content="2020-01-25T08:33:28.692Z">
+<meta property="article:modified_time" content="2020-02-01T07:02:18.170Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006G4b6cly1gb48ahvtckj30px0hmmy0.jpg">
@@ -88,7 +88,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python%E5%9F%BA%E7%A1%80/">python基础</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">python进阶教程</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">python进阶教程</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E6%8C%96%E6%8E%98/">数据分析与挖掘</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
@@ -149,7 +149,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <a class="page-title-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E6%8C%96%E6%8E%98/">数据分析与挖掘</a>
     </h1>
 </div>
 
@@ -161,7 +161,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        python3
+        python第3章
         </h1>
     
 
@@ -203,6 +203,23 @@
 <p>dish_sale.xls样式图片:<br><img src="http://ww1.sinaimg.cn/large/006G4b6cly1gb8w4sa7kuj30r00iwdh0.jpg" alt="456.PNG"></p>
 <h2 id="B部门各年份之间销售金额的比较"><a href="#B部门各年份之间销售金额的比较" class="headerlink" title="B部门各年份之间销售金额的比较"></a>B部门各年份之间销售金额的比较</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">data=pd.read_excel(<span class="string">"../data/dish_sale_b.xls"</span>)</span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>, <span class="number">4</span>))</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'2012年'</span>], color=<span class="string">'green'</span>, label=<span class="string">'2012年'</span>,marker=<span class="string">'o'</span>)</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'2013年'</span>], color=<span class="string">'red'</span>, label=<span class="string">'2013年'</span>,marker=<span class="string">'s'</span>)</span><br><span class="line">plt.plot(data[<span class="string">'月份'</span>], data[<span class="string">'2014年'</span>],  color=<span class="string">'skyblue'</span>, label=<span class="string">'2014年'</span>,marker=<span class="string">'x'</span>)</span><br><span class="line">plt.legend() <span class="comment"># 显示图例</span></span><br><span class="line">plt.ylabel(<span class="string">'销售额（万元）'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p>dish_sale_b.xls样式图片:<br><img src="http://ww1.sinaimg.cn/large/006G4b6cly1gb8w54ngi8j30q70jngmt.jpg" alt="789.PNG"></p>
+<h1 id="代码3-7-某单位日用电量预测分析"><a href="#代码3-7-某单位日用电量预测分析" class="headerlink" title="代码3-7 某单位日用电量预测分析"></a>代码3-7 某单位日用电量预测分析</h1><p>折线图</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">df_normal = pd.read_csv(<span class="string">"../data/user.csv"</span>)</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>,<span class="number">4</span>))</span><br><span class="line">plt.plot(df_normal[<span class="string">"Date"</span>],df_normal[<span class="string">"Eletricity"</span>])</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">"日期"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"每日电量"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置x轴刻度间隔</span></span><br><span class="line">x_major_locator = plt.MultipleLocator(<span class="number">7</span>)</span><br><span class="line">ax = plt.gca()</span><br><span class="line">ax.xaxis.set_major_locator(x_major_locator)</span><br><span class="line"></span><br><span class="line">plt.title(<span class="string">"正常用户电量趋势"</span>)</span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'SimHei'</span>]  <span class="comment"># 用来正常显示中文标签</span></span><br><span class="line">plt.show()  <span class="comment"># 展示图片</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://ww1.sinaimg.cn/large/006G4b6cgy1gbfv3n86goj30uw0jqdh4.jpg" alt="1.PNG"></p>
+<h1 id="窃电用户用电趋势分析"><a href="#窃电用户用电趋势分析" class="headerlink" title="窃电用户用电趋势分析"></a>窃电用户用电趋势分析</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">df_steal = pd.read_csv(<span class="string">"../data/Steal user.csv"</span>)</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">9</span>))</span><br><span class="line">plt.plot(df_steal[<span class="string">"Date"</span>],df_steal[<span class="string">"Eletricity"</span>])</span><br><span class="line">plt.xlabel(<span class="string">"日期"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"每日电量"</span>)</span><br><span class="line"><span class="comment"># 设置x轴刻度间隔</span></span><br><span class="line">x_major_locator = plt.MultipleLocator(<span class="number">7</span>)</span><br><span class="line">ax = plt.gca()</span><br><span class="line">ax.xaxis.set_major_locator(x_major_locator)</span><br><span class="line">plt.title(<span class="string">"窃电用户电量趋势"</span>)</span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'SimHei'</span>]  <span class="comment"># 用来正常显示中文标签</span></span><br><span class="line">plt.show()  <span class="comment"># 展示图片</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://ww1.sinaimg.cn/large/006G4b6cgy1gbfv3vtlc5j30pf0j9dgu.jpg" alt="2.PNG"></p>
+<h1 id="代码3-8-菜品盈利帕累托图"><a href="#代码3-8-菜品盈利帕累托图" class="headerlink" title="代码3-8 菜品盈利帕累托图"></a>代码3-8 菜品盈利帕累托图</h1><p>条形图</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 菜品盈利数据 帕累托图</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化参数</span></span><br><span class="line">dish_profit = <span class="string">'../data/catering_dish_profit.xls'</span>  <span class="comment"># 餐饮菜品盈利数据</span></span><br><span class="line">data = pd.read_excel(dish_profit, index_col = <span class="string">u'菜品名'</span>)</span><br><span class="line">data = data[<span class="string">u'盈利'</span>]</span><br><span class="line">data.sort_values(ascending = <span class="literal">False</span>)<span class="comment">#降序</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt  <span class="comment"># 导入图像库</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'SimHei'</span>]  <span class="comment"># 用来正常显示中文标签</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span>  <span class="comment"># 用来正常显示负号</span></span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line">data.plot(kind=<span class="string">'bar'</span>)</span><br><span class="line">plt.ylabel(<span class="string">u'盈利（元）'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://ww1.sinaimg.cn/large/006G4b6cly1gbgwj77f5fj30r60i60tl.jpg" alt="1.PNG"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data.plot(kind=<span class="string">'bar'</span>)</span><br><span class="line">plt.ylabel(<span class="string">u'盈利（元）'</span>)</span><br><span class="line">p = <span class="number">1.0</span>*data.cumsum()/data.sum()</span><br><span class="line">p.plot(color = <span class="string">'r'</span>, secondary_y = <span class="literal">True</span>, style = <span class="string">'-o'</span>,linewidth = <span class="number">2</span>)</span><br><span class="line">plt.annotate(format(p[<span class="number">6</span>], <span class="string">'.4%'</span>), xy = (<span class="number">6</span>, p[<span class="number">6</span>]), xytext=(<span class="number">6</span>*<span class="number">0.9</span>, p[<span class="number">6</span>]*<span class="number">0.9</span>), arrowprops=dict(arrowstyle=<span class="string">"-&gt;"</span>, connectionstyle=<span class="string">"arc3,rad=.2"</span>))  <span class="comment"># 添加注释，即85%处的标记。这里包括了指定箭头样式。</span></span><br><span class="line">plt.ylabel(<span class="string">u'盈利（比例）'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h1 id="代码3-17-绘制饼图"><a href="#代码3-17-绘制饼图" class="headerlink" title="代码3-17 绘制饼图"></a>代码3-17 绘制饼图</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># The slices will be ordered and plotted counter-clockwise.</span></span><br><span class="line">labels = <span class="string">'Frogs'</span>, <span class="string">'Hogs'</span>, <span class="string">'Dogs'</span>, <span class="string">'Logs'</span>  <span class="comment"># 定义标签</span></span><br><span class="line">sizes = [<span class="number">15</span>, <span class="number">30</span>, <span class="number">45</span>, <span class="number">10</span>]  <span class="comment"># 每一块的比例</span></span><br><span class="line">colors = [<span class="string">'yellowgreen'</span>, <span class="string">'gold'</span>, <span class="string">'lightskyblue'</span>, <span class="string">'lightcoral'</span>]  <span class="comment"># 每一块的颜色</span></span><br><span class="line">explode = (<span class="number">0</span>, <span class="number">0.1</span>, <span class="number">0</span>, <span class="number">0</span>)  <span class="comment"># 突出显示，这里仅仅突出显示第二块（即'Hogs'）</span></span><br><span class="line"></span><br><span class="line">plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct=<span class="string">'%1.1f%%'</span>, shadow=<span class="literal">True</span>, startangle=<span class="number">90</span>)</span><br><span class="line">plt.axis(<span class="string">'equal'</span>)  <span class="comment"># 显示为圆（避免比例压缩为椭圆）</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h1 id="代码3-18-绘制二维条形直方图"><a href="#代码3-18-绘制二维条形直方图" class="headerlink" title="代码3-18 绘制二维条形直方图"></a>代码3-18 绘制二维条形直方图</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.random.randn(<span class="number">1000</span>)  <span class="comment"># 1000个服从正态分布的随机数</span></span><br><span class="line">plt.hist(x, <span class="number">10</span>)  <span class="comment"># 分成10组进行绘制直方图</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+
 
         </div>
         <footer class="article-footer">
@@ -210,7 +227,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2020/01/21/python3/" data-id="ck5ymevrv0008lwvu60n00pqp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2020/01/21/python3/" data-id="ck6392hcb0001vkvud8yqhq53" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -280,16 +297,16 @@
             "@type": "Person",
             "name": "John Doe"
         },
-        "headline": "python3",
+        "headline": "python第3章",
         "image": "http://yoursite.comhttp://ww1.sinaimg.cn/large/006G4b6cly1gb48ahvtckj30px0hmmy0.jpg",
         "keywords": "",
-        "genre": "",
+        "genre": "数据分析与挖掘",
         "datePublished": "2020-01-21",
         "dateCreated": "2020-01-21",
-        "dateModified": "2020-01-25",
+        "dateModified": "2020-02-01",
         "url": "http://yoursite.com/2020/01/21/python3/",
         "description": "代码3-1 使用describe()方法即可查看数据的基本情况1234import pandas as pdcatering_sale = '../data/catering_sale.xls'  # 餐饮数据data = pd.read_excel(catering_sale, index_col = u'日期')  # 读取数据，指定“日期”列为索引列print(data.describe()",
-        "wordCount": 496
+        "wordCount": 965
     }
 </script>
 
@@ -405,6 +422,86 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2020/01/29/python%E8%BF%9B%E9%98%B6-%E6%8E%A8%E5%AF%BC%E5%BC%8F-Comprehension/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/01/29/python%E8%BF%9B%E9%98%B6-%E6%8E%A8%E5%AF%BC%E5%BC%8F-Comprehension/" class="title">python进阶 推导式 Comprehension</a></p>
+                            <p class="item-date"><time datetime="2020-01-29T08:16:19.000Z" itemprop="datePublished">2020-01-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/29/python%E8%BF%9B%E9%98%B6-%E6%9E%9A%E4%B8%BE-Enumerate/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">python进阶教程</a></p>
+                            <p class="item-title"><a href="/2020/01/29/python%E8%BF%9B%E9%98%B6-%E6%9E%9A%E4%B8%BE-Enumerate/" class="title">python进阶 枚举 Enumerate</a></p>
+                            <p class="item-date"><time datetime="2020-01-29T08:12:51.000Z" itemprop="datePublished">2020-01-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/29/python%E8%BF%9B%E9%98%B6-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">python进阶教程</a></p>
+                            <p class="item-title"><a href="/2020/01/29/python%E8%BF%9B%E9%98%B6-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="title">python进阶 lambda表达式</a></p>
+                            <p class="item-date"><time datetime="2020-01-29T08:00:34.000Z" itemprop="datePublished">2020-01-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/29/python%E8%BF%9B%E9%98%B6-%20Map%EF%BC%8CFilter%20%E5%92%8C%20Reduce/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">python进阶教程</a></p>
+                            <p class="item-title"><a href="/2020/01/29/python%E8%BF%9B%E9%98%B6-%20Map%EF%BC%8CFilter%20%E5%92%8C%20Reduce/" class="title">python进阶 Map，Filter 和 Reduce</a></p>
+                            <p class="item-date"><time datetime="2020-01-29T07:46:43.671Z" itemprop="datePublished">2020-01-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2020/01/28/python%E8%BF%9B%E9%98%B6-Generators/" class="thumbnail">
     
     
@@ -422,86 +519,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/01/28/python%E8%BF%9B%E9%98%B6-Debugging/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/python%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">python进阶教程</a></p>
-                            <p class="item-title"><a href="/2020/01/28/python%E8%BF%9B%E9%98%B6-Debugging/" class="title">python进阶 Debugging</a></p>
-                            <p class="item-date"><time datetime="2020-01-28T13:23:12.975Z" itemprop="datePublished">2020-01-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/01/28/python%E8%BF%9B%E9%98%B6-args_kwargs/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/python%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">python进阶教程</a></p>
-                            <p class="item-title"><a href="/2020/01/28/python%E8%BF%9B%E9%98%B6-args_kwargs/" class="title">python进阶   args_kwargs</a></p>
-                            <p class="item-date"><time datetime="2020-01-28T13:05:00.000Z" itemprop="datePublished">2020-01-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/01/28/2010-%E5%B9%B4%E5%85%A8%E5%9B%BD%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E5%85%A5%E5%AD%A6%E7%BB%9F%E4%B8%80%E8%80%83%E8%AF%95/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006G4b6cgy1gbbzq3qgiij31690gedi1.jpg)" alt="2010 年全国硕士研究生入学统一考试(一、选择题) " class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/01/28/2010-%E5%B9%B4%E5%85%A8%E5%9B%BD%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E5%85%A5%E5%AD%A6%E7%BB%9F%E4%B8%80%E8%80%83%E8%AF%95/" class="title">2010 年全国硕士研究生入学统一考试(一、选择题) </a></p>
-                            <p class="item-date"><time datetime="2020-01-28T00:46:00.000Z" itemprop="datePublished">2020-01-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/01/21/python3/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006G4b6cly1gb48ahvtckj30px0hmmy0.jpg)" alt="python3" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/01/21/python3/" class="title">python3</a></p>
-                            <p class="item-date"><time datetime="2020-01-21T07:26:00.000Z" itemprop="datePublished">2020-01-21</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -511,7 +528,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python%E5%9F%BA%E7%A1%80/">python基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">python进阶教程</a><span class="category-list-count">3</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">python进阶教程</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E6%8C%96%E6%8E%98/">数据分析与挖掘</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -521,7 +538,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">7</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">11</span></li></ul>
         </div>
     </div>
 
@@ -531,7 +548,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cad/" rel="tag">cad</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E5%9F%BA%E7%A1%80/" rel="tag">python基础</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cad/" rel="tag">cad</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -541,7 +558,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/cad/" style="font-size: 10px;">cad</a> <a href="/tags/python%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">python基础</a>
+            <a href="/tags/cad/" style="font-size: 10px;">cad</a>
         </div>
     </div>
 
